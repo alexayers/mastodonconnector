@@ -49,12 +49,13 @@ import * as fs from "fs";
 
                 M.post('statuses', {status: `${imageText} \nCross Posted from PixelFed :-)`, media_ids: [id]})
                 fs.writeFileSync(accountID, imageURL,{ encoding: 'utf8', flag: 'w' });
+                console.log(`Posted media`);
             } else {
                 console.log("Skipping this post as it's already been cross posted");
             }
         });
 
-        console.log(`Posted media`);
+
     }
 
 })();
