@@ -14,6 +14,6 @@ Note: This assumes you're installing into root.
 * Copy ./pixelfed/cfg/sample.config.json to ./pixelfed/cfg/config.json
 * Update the values to be your PixelFed instance and your Mastodon instance
 * Test by running: npm run sync.
-* Add this to your crontab to run the sync every minute. It will only sync new items and assumes no one users is updating multiple times a minute (safe bet)
-  * */1 * * * * ts-node /root/mastodonconnector/pixelfed/src/app/main.ts > /root/mastodonconnector/pixelfed/sync.log 2>&1
+* Add this to your crontab to run the sync every minute. It will only sync new items and assumes no one users is updating multiple times a minute (safe bet). Your paths will depend on your install path.
+  * */1 * * * * /root/.nvm/versions/node/v20.5.0/bin/ts-node /root/mastodonconnector/pixelfed/src/app/main.ts > /root/mastodonconnector/pixelfed/sync.log 2>&1
 * Check /root/mastodonconnector/pixelfed/sync.log for errors
