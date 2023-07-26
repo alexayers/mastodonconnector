@@ -29,6 +29,9 @@ import * as fs from "fs";
 
     M.post('media', {file: fs.createReadStream(imageURL)}).then(resp => {
         const id = resp.data.id;
+
+        console.log(`Sending image with status ${imageText}`);
+
         M.post('statuses', {status: imageText, media_ids: [id]})
     });
 
