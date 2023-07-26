@@ -37,7 +37,7 @@ import * as fs from "fs";
                 console.log(`Sending image with status ${imageText}`);
 
                 M.post('statuses', {status: `${imageText} \nCross Posted from PixelFed :-)`, media_ids: [id]})
-                fs.writeFileSync(accountID, id);
+                fs.writeFileSync(accountID, id,{ encoding: 'utf8', flag: 'w' });
             } else {
                 console.log("Skipping this post as it's already been cross posted");
             }
