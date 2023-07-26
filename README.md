@@ -4,10 +4,17 @@ A series of scripts to connect data from various services to Mastodon.
 
 ### PixelFed
 
-Note: This assumes you're installing into root.
+This script works by first attempting to find your most recent post using the public API. It then finds the file on the server itself for uploading to Mastodon using Mastodon's API.
 
-* Create a personal access client by running this command on your server:
-  * php artisan passport:client --personal
+Note: This assumes you're installing into root.
+Note: This also assumes your pixelfed feed is public. It's using the public API without authentication.
+
+On Mastodon Server
+
+* Generate an app on your Mastodon instance and record the secrets
+
+On PixelFed Server 
+
 * Install node on your server (I'm using 20.5.0)
 * Clone the repo to your server
 * Run npm install from ./pixelfed
