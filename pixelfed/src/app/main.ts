@@ -31,7 +31,11 @@ import * as fs from "fs";
         M.post('media', {file: fs.createReadStream(imageURL)}).then(resp => {
             const id = resp.data.id;
 
-            let contents = fs.readFileSync(accountID, { encoding: 'utf8', flag: 'r' });
+            let contents = "-1";
+
+            try {
+                let contents = fs.readFileSync(accountID, {encoding: 'utf8', flag: 'r'});
+            } catch (e) {}
 
             if (contents != id) {
                 console.log(`Sending image with status ${imageText}`);
