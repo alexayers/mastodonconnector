@@ -9,3 +9,6 @@ A series of scripts to connect data from various services to Mastodon.
 * Install node on your server (I'm using 20.5.0)
 * Clone the repo to your server
 * Run npm install from ./pixelfed
+* Copy ./pixelfed/cfg/sample.config.json to ./pixelfed/cfg/config.json
+* Update the values to be your PixelFed instance and your Mastodon instance
+* Test by running: npm run sync. 

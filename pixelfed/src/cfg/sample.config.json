@@ -7,7 +7,7 @@
         "account": "<YOUR_ACCOUNT_ID>"
       },
       "to": {
-        "api": "https://<YOUR_MASTODON_HOST>/api/v1",
+        "api": "https://<YOUR_MASTODON_HOST>/api/v1/",
         "clientKey": "<CLIENT_KEY>",
         "clientSecret": "<CLIENT_SECRET>",
         "accessToken": "<ACCESS_TOKEN>"
