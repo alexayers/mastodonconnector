@@ -13,4 +13,4 @@ A series of scripts to connect data from various services to Mastodon.
 * Update the values to be your PixelFed instance and your Mastodon instance
 * Test by running: npm run sync. 
 * Add this to your crontab
-  * */1 * * * * sh /root/mastodonconnector/pixelfed/src/bash/sync.sh
+  * */1 * * * * sh /root/mastodonconnector/pixelfed/sync.sh
