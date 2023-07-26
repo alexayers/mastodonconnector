@@ -8,6 +8,7 @@ import * as fs from "fs";
     console.log("Running...");
     const PIXELFED_API : string = config.pixelFed.baseURL;
     const PIXELFED_STORAGE_ROOT : string = config.pixelFed.baseStorage;
+    const ROOT_DIR : string = config.pixelFed.rootDir;
 
     for (let accountIdx : number = 0; accountIdx < config.pixelFed.sync.length; accountIdx++) {
 
@@ -17,7 +18,7 @@ import * as fs from "fs";
         const imageText = response.data[0]["content_text"];
         const imageURL : string = PIXELFED_STORAGE_ROOT + response.data[0]["media_attachments"][0]["url"].split("storage")[1];
 
-        fs.open(accountID,'r',function(err, fd){
+        fs.open(`${ROOT_DIR}/${accountID}`,'r',function(err, fd){
             if (err) {
                 fs.writeFile(accountID, '-1', function(err) {
                     if(err) {
@@ -48,7 +49,7 @@ import * as fs from "fs";
                 console.log(`Sending image with status ${imageText}`);
 
                 M.post('statuses', {status: `${imageText} \nCross Posted from PixelFed :-)`, media_ids: [id]})
-                fs.writeFileSync(accountID, imageURL,{ encoding: 'utf8', flag: 'w' });
+                fs.writeFileSync(`${ROOT_DIR}/${accountID}`, imageURL,{ encoding: 'utf8', flag: 'w' });
                 console.log(`Posted media`);
             } else {
                 console.log("Skipping this post as it's already been cross posted");

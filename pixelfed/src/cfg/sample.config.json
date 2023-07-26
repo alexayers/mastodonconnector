@@ -2,6 +2,7 @@
   "pixelFed": {
     "baseURL": "https://<YOUR_PIXELFED_HOST>/api/pixelfed/v1/accounts",
     "baseStorage": "/var/www/html/<YOUR_PIXELFED_HOST>/storage/app/public",
+    "rootDir": "/root/mastodonconnector/pixelfed",
     "sync": [{
       "from": {
         "account": "<YOUR_ACCOUNT_ID>"
